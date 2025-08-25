@@ -41,7 +41,7 @@ fn download_file(client: &Client, url: &str, out_path: &Path) -> io::Result<()> 
 /// 下载 snapshot 中的所有文件
 fn download_epoch(base_url: &str, epoch: u64, out_dir: &Path, num_threads: usize) -> io::Result<()> {
     let client = Client::builder()
-        .timeout(Duration::from_secs(60))
+        .timeout(Duration::from_secs(300))
         .build()
         .unwrap();
 
